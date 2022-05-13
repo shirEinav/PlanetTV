@@ -1,0 +1,13 @@
+.text {
+  display: inline-block;
+}
+
+.link {
+  color: var(--color-primary-light);
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+}

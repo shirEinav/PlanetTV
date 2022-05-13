@@ -1,0 +1,23 @@
+@use '../../../styles/abstracts/devices' as *;
+
+.mainContainer {
+  min-height: calc(100vh - 12.6rem);
+}
+
+.container {
+  max-width: 110rem;
+  margin: 0 auto;
+
+  &.sm {
+    max-width: 45rem;
+  }
+
+  // Tablet + mobile
+  @media #{$break2}, #{$break3} {
+    padding: 0 4rem;
+  }
+  // Small mobile
+  @media #{$break1} {
+    padding: 0 3rem;
+  }
+}

@@ -1,0 +1,45 @@
+@use '../../../styles/abstracts/devices.scss' as *;
+
+.btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  padding: 0.4em;
+  border-radius: 50%;
+  background: var(--color-primary-dark-1);
+  box-shadow: var(--box-shadow-a80);
+  line-height: 0;
+  transition: all 0.2s ease-in;
+
+  &.small {
+    font-size: 2rem;
+
+    &.prev {
+      left: -2.5rem;
+    }
+    &.next {
+      right: -3rem;
+    }
+  }
+
+  &.large {
+    font-size: 3.3rem;
+
+    &.prev {
+      left: -3rem;
+    }
+    &.next {
+      right: -3rem;
+    }
+  }
+
+  &:hover {
+    background: var(--color-primary-dark-2);
+  }
+
+  // Tablet + mobile
+  @media #{$break3}, #{$break1}, #{$break2} {
+    display: none;
+  }
+}

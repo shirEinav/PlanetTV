@@ -1,0 +1,17 @@
+.btn {
+  min-width: 4rem;
+  min-height: 4rem;
+  margin: 1rem;
+  padding: 0.5em;
+  border-radius: 50%;
+  box-shadow: 0 1rem 3rem hsl(256deg 53% 10% / 10%);
+  background-color: #fff;
+  color: var(--color-primary-dark-2);
+  font-size: 2rem;
+  line-height: 0;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: darken(#fff, 10%);
+  }
+}

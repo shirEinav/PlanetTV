@@ -1,0 +1,32 @@
+@use '../../../../styles/abstracts/devices' as *;
+
+.titles {
+  display: grid;
+  margin: 0 auto 3rem auto;
+
+  // Desktop + tablet
+  @media #{$break3}, #{$break4}, #{$break5} {
+    gap: 4rem;
+  }
+  // Desktop
+  @media #{$break4}, #{$break5} {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  // Tablet
+  @media #{$break3} {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  // Mobile
+  @media #{$break1}, #{$break2} {
+    gap: 2rem;
+  }
+  // Mobile big
+  @media #{$break2} {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  // Mobile Small
+  @media #{$break1} {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

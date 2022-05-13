@@ -1,0 +1,130 @@
+@use '../../../styles/abstracts/devices' as *;
+
+.title {
+  &Item {
+    position: relative;
+    aspect-ratio: 1 / 1.5;
+    object-fit: cover;
+    border-radius: 1.5rem;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      &.watchlistItem {
+        &:hover,
+        &:focus-within {
+          .removeBtn {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  &Link {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    padding: 1.8rem;
+    border-radius: inherit;
+  }
+}
+
+.poster,
+.posterOverlay,
+.noPoster {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 1.5rem;
+  background: var(--color-primary-dark-3);
+}
+
+.posterOverlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    var(--color-primary-dark-3-a60),
+    var(--color-primary-dark-3-a95)
+  );
+}
+
+.noPoster {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-grey);
+  font-size: 7rem;
+}
+
+.data {
+  flex: 1;
+  z-index: 10;
+}
+
+.year {
+  font-size: 1.2rem;
+  line-height: 1.3;
+}
+
+.name {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.genres {
+  margin-top: 0.6rem;
+  color: var(--color-grey-light);
+
+  // Desktop
+  @media #{$break4}, #{$break5} {
+    font-size: 1.2rem;
+  }
+  // Tablet + mobile
+  @media #{$break1}, #{$break2}, #{$break3} {
+    font-size: clamp(1.3rem, 1.4vw, 1.6rem);
+  }
+}
+
+.skeleton {
+  aspect-ratio: 1 / 1.5;
+  border-radius: 1.5rem;
+  background-image: linear-gradient(
+    90deg,
+    var(--color-primary-dark-3),
+    var(--color-primary-dark-3-a50) 4rem,
+    var(--color-primary-dark-3) 8rem
+  );
+  background-size: 200%;
+  animation: skelteonAnim 1.3s linear infinite forwards;
+}
+
+@keyframes skelteonAnim {
+  0% {
+    background-position: 100% 0;
+  }
+  40%,
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+.removeBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+}

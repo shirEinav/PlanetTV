@@ -1,0 +1,29 @@
+:root {
+  --color-primary: hsl(255, 78%, 60%);
+  --color-primary-hover: hsl(255, 78%, 53%);
+  --color-primary-light: hsl(255, 92%, 85%);
+
+  --color-primary-dark-1: hsl(256, 53%, 20%);
+  --color-primary-dark-2: hsl(256, 53%, 17%);
+  --color-primary-dark-3: hsl(256, 53%, 10%);
+
+  --color-primary-a90: hsla(255, 78%, 60%, 0.9);
+  --color-primary-dark-3-a40: hsla(256, 53%, 10%, 40%);
+  --color-primary-dark-3-a50: hsla(256, 53%, 10%, 50%);
+  --color-primary-dark-3-a60: hsla(256, 53%, 10%, 60%);
+  --color-primary-dark-3-a80: hsla(256, 53%, 10%, 80%);
+  --color-primary-dark-3-a95: hsla(256, 53%, 10%, 95%);
+
+  --color-secondary: hsl(45, 97%, 54%);
+  --color-secondary-hover: hsl(45, 97%, 47%);
+
+  --color-grey: hsl(256, 23%, 32%);
+  --color-grey-a35: hsla(256, 23%, 32%, 35%);
+  --color-grey-light: hsl(256, 23%, 72%);
+
+  --color-error: hsl(343, 90%, 52%);
+
+  --box-shadow-a50: 0 1rem 3rem hsla(256, 53%, 10%, 50%);
+  --box-shadow-a60: 0 1rem 3rem hsla(256, 53%, 10%, 60%);
+  --box-shadow-a80: 0 1rem 3rem hsla(256, 53%, 10%, 80%);
+}

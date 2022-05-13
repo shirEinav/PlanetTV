@@ -1,0 +1,51 @@
+@use '../../../styles/abstracts/devices' as *;
+
+.bg {
+  width: 100%;
+  margin-bottom: 3rem;
+  background-color: var(--color-primary-dark-3-a40);
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+
+  // Desktop + mobile
+  @media #{$break1}, #{$break2}, #{$break4}, #{$break5} {
+    max-width: 110rem;
+  }
+  // Tablet
+  @media #{$break3} {
+    max-width: 120rem;
+  }
+}
+
+.inner {
+  display: grid;
+  grid-auto-flow: column;
+  white-space: nowrap;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  transition: all 1.5s ease;
+
+  // Desktop
+  @media #{$break4}, #{$break5} {
+    padding: 1.5rem 0;
+  }
+  // Tablet
+  @media #{$break3} {
+    padding: 1.5rem 0 1.5rem 4rem;
+  }
+  // Mobile
+  @media #{$break1}, #{$break2} {
+    padding: 1.5rem 0 1.5rem 1.5rem;
+  }
+}

@@ -1,0 +1,78 @@
+@use '../../../styles/abstracts/devices' as *;
+
+.container {
+  max-width: 110rem;
+
+  // Desktop + tablet
+  @media #{$break3}, #{$break4}, #{$break5} {
+    margin: 7rem auto 0 auto;
+  }
+  // Mobile
+  @media #{$break1}, #{$break2} {
+    margin: 6rem auto 0 auto;
+  }
+
+  .heading {
+    font-size: 3rem;
+    font-weight: 700;
+
+    // Desktop + tablet
+    @media #{$break3}, #{$break4}, #{$break5} {
+      margin-bottom: 0.5rem;
+    }
+    // Tablet + mobile
+    @media #{$break1}, #{$break2}, #{$break3} {
+      padding-left: 4rem;
+    }
+    // Mobile
+    @media #{$break1}, #{$break2} {
+      margin-bottom: 2.5rem;
+    }
+  }
+}
+
+.slider {
+  &Wrapper {
+    position: relative;
+    // Desktop + tablet
+    @media #{$break3}, #{$break4}, #{$break5} {
+      margin-left: -1rem;
+    }
+  }
+
+  &Inner {
+    display: grid;
+    grid-auto-flow: column;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    transition: all 1.5s ease;
+
+    // Desktop + tablet
+    @media #{$break3}, #{$break4}, #{$break5} {
+      gap: 2rem;
+      padding: 2rem 1rem;
+    }
+    // Desktop
+    @media #{$break4}, #{$break5} {
+      grid-auto-columns: 22%;
+    }
+    // Tablet
+    @media #{$break3} {
+      grid-auto-columns: 29%;
+      padding-left: 4rem;
+    }
+    // Mobile + small mobile
+    @media #{$break1}, #{$break2} {
+      grid-auto-columns: 65%;
+      gap: 3rem;
+      padding-right: 2rem;
+      padding-left: 4rem;
+    }
+  }
+}

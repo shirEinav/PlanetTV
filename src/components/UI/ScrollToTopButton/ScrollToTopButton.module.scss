@@ -1,0 +1,22 @@
+.btn {
+  position: fixed;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  z-index: 200;
+  padding: 0.3em 0.4em 0.4em 0.4em;
+  border-radius: 50%;
+  background-color: var(--color-primary-a90);
+  box-shadow: var(--box-shadow-a50);
+  font-size: 3.2rem;
+  line-height: 0;
+  transition: all 0.2s ease-in;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: var(--color-primary-hover);
+    }
+  }
+  &:active {
+    transform: scale(0.925);
+  }
+}

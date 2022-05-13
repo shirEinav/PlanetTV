@@ -1,0 +1,80 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  min-width: 18.8rem;
+  min-height: 4.6rem;
+  padding: 0.8em 1.1em;
+  border-radius: 1rem;
+  font-size: inherit;
+  font-weight: 700;
+  line-height: 1;
+  transition: all 0.2s ease-in;
+
+  &.inWatchlist {
+    background-color: var(--color-primary);
+    color: #fff;
+
+    &:hover {
+      background-color: var(--color-primary-hover);
+    }
+  }
+
+  &.addWatchlist {
+    background-color: var(--color-secondary);
+    color: var(--color-primary-dark-2);
+
+    &:hover {
+      background-color: var(--color-secondary-hover);
+    }
+  }
+}
+
+.disabled {
+  position: relative;
+
+  .btn {
+    cursor: default;
+
+    &:hover,
+    &:focus {
+      & + .tooltip {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  .tooltip {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    padding: 0.5rem 1rem;
+    margin-top: 1.5rem;
+    border-radius: 1rem;
+    background-color: var(--color-grey);
+    text-align: center;
+    font-size: 1.4rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+
+    &Text {
+      &::before {
+        content: ' ';
+        content: ' ';
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        margin-top: 1.5rem;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent var(--color-grey) transparent;
+      }
+    }
+  }
+}

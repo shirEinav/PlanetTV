@@ -1,0 +1,115 @@
+@use '../../styles/abstracts/devices' as *;
+
+.bgWrapper {
+  background-color: var(--color-primary-dark-3-a50);
+  margin-bottom: 4rem;
+}
+
+.heading {
+  padding-bottom: 1.5rem;
+  font-size: 4rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.btnWrapper {
+  display: flex;
+
+  // Desktop + Tablet + Mobile
+  @media #{$break2}, #{$break3}, #{$break4}, #{$break5} {
+    gap: 2rem;
+  }
+  // Small mobile
+  @media #{$break1} {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+.success {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem;
+  margin-bottom: 2rem;
+  border-radius: 0.8rem;
+  background-color: #1b9f5f;
+
+  svg {
+    margin-top: -2px;
+  }
+}
+
+.modal {
+  position: relative;
+  z-index: 15;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1.5rem;
+  padding: 4rem 3.5rem 3.5rem 3.5rem;
+  background-color: var(--color-primary-dark-1);
+  text-align: center;
+
+  // Mobile
+  @media #{$break1}, #{$break2} {
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  &Heading {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  &Text {
+    max-width: 50ch;
+  }
+
+  &BtnWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    margin-top: 2rem;
+
+    // Desktop + Tablet
+    @media #{$break3}, #{$break4}, #{$break5} {
+      gap: 2rem;
+    }
+
+    // Mobile
+    @media #{$break1}, #{$break2} {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  z-index: 1000;
+  padding: 0.6em;
+  border-radius: 50%;
+  background-color: #fff;
+  color: var(--color-primary-dark-1);
+  font-size: 1.5rem;
+  line-height: 0;
+  transition: background-color 0.2s ease-in;
+
+  // Mobile
+  @media #{$break1}, #{$break2} {
+    top: 1rem;
+    right: 1rem;
+  }
+
+  &:hover {
+    background-color: darken(#fff, 10%);
+  }
+}

@@ -1,0 +1,39 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+
+  .spinner {
+    width: 3rem;
+    height: 3rem;
+    border: 0.55rem solid var(--color-grey-light);
+    border-top: 0.55rem solid var(--color-primary);
+    border-radius: 50%;
+    animation: spinnerAnim 1s linear infinite;
+  }
+
+  &.sm {
+    padding: 0;
+    .spinner {
+      width: 1.5rem;
+      height: 1.5rem;
+      border: 0.25rem solid #fff;
+      border-top: 0.25rem solid var(--color-primary);
+    }
+  }
+
+  &.centered {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+@keyframes spinnerAnim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

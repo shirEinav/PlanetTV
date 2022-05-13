@@ -1,0 +1,60 @@
+@use '../../../styles/abstracts/devices' as *;
+
+.actors {
+  &Section {
+    max-width: 110rem;
+    margin: 6rem auto 0 auto;
+
+    // Tablet
+    @media #{$break3} {
+      padding: 0 4rem;
+    }
+  }
+
+  &Title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+
+    // Mobile
+    @media #{$break1}, #{$break2} {
+      padding-left: 4rem;
+    }
+  }
+
+  &List {
+    display: grid;
+
+    // Desktop
+    @media #{$break4}, #{$break5} {
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 4rem;
+    }
+    // Tablet
+    @media #{$break3} {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 4.5rem;
+      width: 90%;
+    }
+    // Mobile
+    @media #{$break1}, #{$break2} {
+      grid-auto-flow: column;
+      grid-auto-columns: 40%;
+      grid-gap: 3rem;
+      padding-right: 3rem;
+      padding-left: 4rem;
+      overflow-x: auto;
+      overscroll-behavior-inline: contain;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+    // Small mobile
+    @media #{$break1} {
+      grid-auto-columns: 65%;
+    }
+  }
+}

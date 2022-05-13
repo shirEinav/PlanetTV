@@ -1,0 +1,126 @@
+@use '../../styles/abstracts/devices' as *;
+
+.search {
+  position: relative;
+  margin: 0 auto;
+  border-radius: 1.5rem;
+  font-size: 1.8rem;
+  transition: all 0.2s ease;
+
+  &:focus-within {
+    transform: translateY(-2px);
+    box-shadow: var(--box-shadow-a50);
+  }
+
+  // Desktop
+  @media #{$break4}, #{$break5} {
+    width: 55%;
+  }
+  // Tablet
+  @media #{$break3} {
+    width: max(65%, 65rem);
+  }
+  // Mobile
+  @media #{$break1}, #{$break2} {
+    width: 100%;
+  }
+
+  &.searchTop {
+    // Desktop + tablet
+    @media #{$break3}, #{$break4}, #{$break5} {
+      transform: translateY(-50%);
+
+      &:focus-within {
+        transform: translateY(-50%);
+      }
+    }
+    // Tablet
+    @media #{$break3} {
+      width: max(55%, 35rem);
+    }
+    // Mobile
+    @media #{$break1}, #{$break2} {
+      transform: translateY(0);
+      margin: 3rem 0;
+    }
+  }
+
+  &.searchWatchlist {
+    transform: translateY(50%);
+
+    &:focus-within {
+      transform: translateY(50%);
+    }
+  }
+}
+
+.wrapper {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.input,
+.inputWatchlist {
+  border: none;
+  background-color: var(--color-grey);
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+
+  &::placeholder {
+    color: var(--color-grey-light);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.input {
+  width: calc(100% - 9.6rem);
+  padding: 1.9rem 1rem 1.9rem 2.5rem;
+}
+
+.inputWatchlist {
+  width: calc(100% - 7.4rem);
+  padding: 1.9rem 1rem 1.9rem 1.9rem;
+}
+
+.searchIcon {
+  display: flex;
+  align-items: center;
+  min-width: 3.6rem;
+  padding-left: 2rem;
+  color: var(--color-grey-light);
+  background-color: var(--color-grey);
+
+  svg {
+    margin-bottom: 0.2rem;
+  }
+}
+
+.searchBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 6rem;
+  font-size: inherit;
+  background-color: var(--color-primary);
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: var(--color-primary-hover);
+  }
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+  overflow: hidden;
+}

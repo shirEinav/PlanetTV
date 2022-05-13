@@ -1,0 +1,48 @@
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.8em 1.1em;
+  border-radius: 1rem;
+  font-size: inherit;
+  font-weight: 700;
+  transition: all 0.2s ease-in;
+
+  svg {
+    margin-bottom: 2px;
+  }
+
+  &.full-width {
+    display: block;
+    width: 100%;
+    padding: 1em;
+    margin: 1rem 0;
+    text-align: center;
+  }
+
+  &.primary {
+    background-color: var(--color-primary);
+    font-weight: 600;
+
+    &:hover {
+      background-color: var(--color-primary-hover);
+    }
+  }
+
+  &.secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-primary-dark-2);
+
+    &:hover {
+      background-color: var(--color-secondary-hover);
+    }
+  }
+
+  &.outline {
+    border: 1px solid #fff;
+    &:hover {
+      background-color: #fff;
+      color: var(--color-primary-dark-2);
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 2rem;
+  margin-top: 6rem;
+  background: var(--color-primary-dark-3-a80);
+
+  &Link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    width: max-content;
+    color: var(--color-grey-light);
+    transition: color 0.2s ease;
+
+    svg {
+      margin-bottom: 0.5rem;
+    }
+
+    &:hover {
+      color: var(--color-primary-light);
+    }
+  }
+}
