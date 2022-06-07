@@ -12,13 +12,18 @@ import TitleTabs from '../../components/Titles/TitleTabs/TitleTabs';
 const Home = () => {
   const navigate = useNavigate();
   const [filter] = useSearchParams();
+  const currentFilter = filter.get('genre');
 
   const [currentTitles, setCurrentTitles] = useState(
-    filter.get('genre') || 'popular'
+    currentFilter || 'popular'
   );
 
   const { data, isLoading, fetchNextPage, hasNextPage } =
     useHomeTitles(currentTitles);
+
+  useEffect(() => {
+    setCurrentTitles(currentFilter || 'popular');
+  }, [currentFilter]);
 
   useEffect(() => {
     data === 'not found' && navigate('/notfound');
